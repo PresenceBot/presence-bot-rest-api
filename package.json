@@ -1,0 +1,21 @@
+{
+  "name": "presence-bot-rest-api",
+  "version": "0.0.0",
+  "description": "RESTful API for querying PresenceBot analytic data",
+  "main": "src/index.js",
+  "repository": "https://github.com/PresenceBot/presence-bot-rest-api.git",
+  "author": "Alex Babis <acbabis@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev-start": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "compression": "^1.7.2",
+    "eslint": "^4.18.1",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "nodemon": "^1.15.1"
+  }
+}
