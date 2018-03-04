@@ -8,6 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
+    "start": "node src/index.js",
     "dev-start": "nodemon src/index.js"
   },
   "dependencies": {

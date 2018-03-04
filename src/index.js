@@ -20,4 +20,4 @@ app.use('/guilds', require('./routes/guilds/guilds.js'));
 
 app.use(notFound);
 
-app.listen(process.env.PORT || 8080);
+app.listen(8080, '0.0.0.0');
