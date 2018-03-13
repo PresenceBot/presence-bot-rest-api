@@ -58,7 +58,7 @@ module.exports = {
             do {
                 timeArr.push(+nextTime);
                 nextTime = moment(nextTime).add(interval);
-            } while(nextTime < endOfPeriod);
+            } while(nextTime <= endOfPeriod);
 
             // Helper function for determining the amount of time (in milliseconds)
             // that two time intervals overlap.
@@ -76,7 +76,9 @@ module.exports = {
 
                 const peekTime = () => activity.length > 0 ? activity[0].timestamp : Infinity;
 
-                const bucketedTime = timeArr.map(startTime => {
+                // Since interval array represents interval boundaries,
+                // activity array must be one unit smaller
+                const bucketedTime = timeArr.slice(0, -1).map(startTime => {
                     const endTime = startTime + interval;
                     const durations = { offline: 0, online: 0, dnd: 0, idle: 0 };
                     while(block != null && block.timestamp < endTime) {
