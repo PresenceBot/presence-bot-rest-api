@@ -15,6 +15,7 @@ app.use(compression());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 app.use(session({ secret: SESSION_SECRET }));
+app.set('json spaces', 2);
 
 app.use('/guilds', require('./routes/guilds/guilds.js'));
 
